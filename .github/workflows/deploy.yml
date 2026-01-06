@@ -1,0 +1,55 @@
+name: Deploy to Oracle Cloud
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Oracle Cloud
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+        run: |
+          # Setup SSH
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H $REMOTE_HOST >> ~/.ssh/known_hosts
+
+          # Deploy built files
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
+            dist/ ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}/
+
+          # Fix SELinux contexts and permissions
+          ssh -i ~/.ssh/id_rsa ${REMOTE_USER}@${REMOTE_HOST} << 'ENDSSH'
+            sudo chown -R nginx:nginx /var/www/portfolio
+            sudo find /var/www/portfolio -type f -exec chmod 644 {} \;
+            sudo find /var/www/portfolio -type d -exec chmod 755 {} \;
+            sudo restorecon -Rv /var/www/portfolio
+            sudo systemctl reload nginx
+ENDSSH
+
+          echo "Deployment completed successfully!"

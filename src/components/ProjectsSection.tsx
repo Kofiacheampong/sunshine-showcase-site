@@ -1,49 +1,77 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Globe, BarChart, Server } from "lucide-react";
+import { ExternalLink, Github, Globe, BarChart, Server, TrendingUp, Building2, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "Football Web Application",
+    title: "Homelab Monitoring Stack",
+    icon: Server,
+    description:
+      "Production-ready monitoring solution for homelab infrastructure using Prometheus, Grafana, and Caddy. Features automatic HTTPS, real-time Pi-hole DNS metrics, system performance tracking, and automated backups.",
+    highlights: [
+      "92% reduction in documentation complexity",
+      "Automatic HTTPS with Caddy reverse proxy",
+      "Real-time monitoring with 15-second scrape intervals",
+    ],
+    tech: ["Docker", "Prometheus", "Grafana", "Caddy", "Node Exporter", "Linux"],
+    link: "https://github.com/Kofiacheampong/homelab",
+    type: "github",
+  },
+  {
+    title: "Football Analytics Web App",
     icon: Globe,
     description:
-      "Web application using Flask, Bootstrap, and SCSS to display football league tables, top scorers, and top assisters from the top five European leagues.",
+      "A Flask-based web application that displays top scorers and stats across European leagues. Built with Bootstrap and hosted on Ubuntu with Nginx.",
     highlights: [
-      "Integrated RapidAPI to pull real-time football data",
-      "Designed user-friendly UI with responsive design",
-      "Dynamic data filtering for player stats by name and season",
+      "Integrated RapidAPI for real-time football data",
+      "Responsive UI with Bootstrap design",
+      "Dynamic filtering for player stats by name and season",
     ],
-    tech: ["Flask", "Bootstrap", "SCSS", "Python", "SQL", "RapidAPI"],
-    link: "https://footballwebapp.onrender.com",
+    tech: ["Flask", "Python", "Bootstrap", "Ubuntu", "Nginx"],
+    link: "https://github.com/Kofiacheampong/footballwebapp",
+    type: "github",
+  },
+  {
+    title: "Investment Tracker",
+    icon: TrendingUp,
+    description:
+      "A minimalist stock tracking application using Yahoo Finance data. Includes sparkline charts and portfolio breakdowns.",
+    highlights: [
+      "Real-time stock data from Yahoo Finance API",
+      "Portfolio performance visualization with sparklines",
+      "Clean, minimalist design for easy tracking",
+    ],
+    tech: ["Python", "Yahoo Finance API", "Matplotlib", "Pandas"],
+    link: "https://github.com/Kofiacheampong/InvestmentTracker",
+    type: "github",
+  },
+  {
+    title: "Study Buddy Web App",
+    icon: GraduationCap,
+    description:
+      "AI-powered web application that can summarize transcripts and provide study notes as well as generate flashcards.",
+    highlights: [
+      "Automatic transcript summarization",
+      "AI-generated study notes and flashcards",
+      "Built with transformer models for NLP",
+    ],
+    tech: ["Flask", "Tokenizers", "Transformers", "Python"],
+    link: "https://studybuddy-6b0i.onrender.com/study/",
     type: "live",
   },
   {
-    title: "EuroShots 2024 Football Data Analysis",
-    icon: BarChart,
+    title: "JAM Construction Estimator",
+    icon: Building2,
     description:
-      "Comprehensive football data analysis project focused on shot statistics from Euro 2024 using Python and Pandas for data manipulation and cleaning.",
+      "Estimating pipeline and business intelligence solution for a Black woman-owned startup construction company.",
     highlights: [
-      "Collected and analyzed player performance data",
-      "Visualized shot data using Matplotlib and Seaborn",
-      "Modular design for easy updates and scalability",
+      "Project estimation and pipeline management",
+      "Business analytics for construction workflows",
+      "Custom solution for small business needs",
     ],
-    tech: ["Python", "Pandas", "Matplotlib", "Seaborn", "GitHub"],
-    link: "https://github.com",
-    type: "github",
-  },
-  {
-    title: "Homelab Infrastructure Monitoring Stack",
-    icon: Server,
-    description:
-      "Full observability stack with Prometheus, Grafana, and Alertmanager to monitor Pi-hole (70K+ daily queries) and multi-host system metrics.",
-    highlights: [
-      "Implemented 7 automated alert rules with mobile notifications",
-      "Simplified system by 92%, consolidating multiple monitoring stacks",
-      "Built unified Prometheus solution",
-    ],
-    tech: ["Prometheus", "Grafana", "Alertmanager", "Docker", "Linux"],
-    link: "https://github.com",
-    type: "github",
+    tech: ["Business Analysis", "Excel", "Process Optimization"],
+    link: "https://jamconst.com",
+    type: "live",
   },
 ];
 
