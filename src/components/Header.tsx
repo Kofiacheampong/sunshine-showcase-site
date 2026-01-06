@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Download, Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -76,6 +77,7 @@ const Header = () => {
             >
               <Github className="w-4 h-4" />
             </a>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -128,6 +130,7 @@ const Header = () => {
               >
                 <Github className="w-4 h-4" />
               </a>
+              <ThemeToggle />
             </div>
           </nav>
         </motion.div>
