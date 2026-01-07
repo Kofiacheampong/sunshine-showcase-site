@@ -12,24 +12,25 @@ import {
 
 const skillCategories = [
   {
-    title: "Data & Analytics",
+    title: "Data Engineering",
     icon: Database,
     skills: [
-      { name: "Python", level: 85 },
+      { name: "Python", level: 90 },
       { name: "SQL", level: 90 },
-      { name: "Excel", level: 95 },
-      { name: "Power BI", level: 80 },
-      { name: "Tableau", level: 75 },
+      { name: "ETL Pipelines", level: 85 },
+      { name: "Data Warehousing", level: 80 },
+      { name: "Apache Spark", level: 75 },
     ],
   },
   {
-    title: "Web Development",
-    icon: Code2,
+    title: "Cloud & DevOps",
+    icon: Server,
     skills: [
-      { name: "HTML/CSS", level: 90 },
-      { name: "JavaScript", level: 70 },
-      { name: "Flask", level: 75 },
-      { name: "React", level: 65 },
+      { name: "Oracle Cloud", level: 85 },
+      { name: "Docker", level: 90 },
+      { name: "CI/CD", level: 85 },
+      { name: "Prometheus", level: 80 },
+      { name: "Terraform", level: 75 },
     ],
   },
 ];
@@ -37,12 +38,12 @@ const skillCategories = [
 const techStack = [
   { name: "Python", icon: FileCode2, color: "from-yellow-400 to-blue-500" },
   { name: "SQL", icon: Database, color: "from-blue-400 to-blue-600" },
-  { name: "Power BI", icon: BarChart3, color: "from-yellow-500 to-amber-600" },
-  { name: "Tableau", icon: BarChart3, color: "from-blue-500 to-indigo-600" },
-  { name: "Git", icon: GitBranch, color: "from-orange-500 to-red-500" },
-  { name: "HTML/CSS", icon: Layout, color: "from-orange-400 to-pink-500" },
-  { name: "Flask", icon: Server, color: "from-gray-600 to-gray-800" },
+  { name: "Docker", icon: Server, color: "from-blue-500 to-cyan-500" },
+  { name: "Oracle Cloud", icon: Server, color: "from-red-500 to-orange-500" },
+  { name: "Kubernetes", icon: GitBranch, color: "from-blue-600 to-indigo-600" },
+  { name: "Prometheus", icon: BarChart3, color: "from-orange-500 to-red-500" },
   { name: "Grafana", icon: Monitor, color: "from-orange-400 to-yellow-500" },
+  { name: "Terraform", icon: Layout, color: "from-purple-500 to-pink-500" },
 ];
 
 const SkillsSection = () => {
@@ -61,7 +62,7 @@ const SkillsSection = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-accent mx-auto rounded-full" />
           <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-            Proficient in data analysis tools, programming languages, and visualization platforms
+            Expertise in data engineering, cloud infrastructure, and DevOps automation tools
           </p>
         </motion.div>
 

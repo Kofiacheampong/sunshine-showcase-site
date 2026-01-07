@@ -3,24 +3,24 @@ import { Database, Cloud, Code2, BarChart3, GitBranch, FileSpreadsheet } from "l
 
 const skills = [
   {
-    category: "Data Tools & Technologies",
+    category: "Cloud Platforms & Infrastructure",
+    icon: Cloud,
+    items: ["Oracle Cloud", "AWS", "Azure", "Docker", "Kubernetes"],
+  },
+  {
+    category: "Data Engineering & Pipelines",
     icon: Database,
-    items: ["Python", "SQL", "Excel", "Power BI", "Tableau"],
+    items: ["Python", "SQL", "ETL", "Apache Spark", "Data Warehousing"],
   },
   {
-    category: "Programming & Scripting",
-    icon: Code2,
-    items: ["HTML", "CSS", "Python", "Flask"],
-  },
-  {
-    category: "Skills",
+    category: "DevOps & Monitoring",
     icon: BarChart3,
-    items: ["Data Analysis", "Data Cleaning", "Data Visualization", "Reporting", "Statistical Analysis"],
+    items: ["CI/CD", "Prometheus", "Grafana", "Terraform", "Jenkins"],
   },
   {
-    category: "Tools",
-    icon: GitBranch,
-    items: ["Git", "GitHub", "MS Office Suite", "Prometheus", "Grafana"],
+    category: "Development & Automation",
+    icon: Code2,
+    items: ["Python", "Bash", "Git", "Flask", "RESTful APIs"],
   },
 ];
 
@@ -53,10 +53,10 @@ const AboutSection = () => {
               Profile Summary
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Detail-oriented Data Analyst with strong experience in IT support, front-end development, and project management. Skilled at analyzing data to solve user and business challenges, generating insights, and improving operational efficiency.
+              Data Engineer and Cloud Developer with expertise in building scalable data pipelines, managing cloud infrastructure, and implementing DevOps practices. Specialized in designing end-to-end data solutions that transform raw data into actionable insights while ensuring reliability and performance.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Proficient in leveraging data tools to gather, clean, and visualize data, with a track record of identifying opportunities for optimization in both technical and business environments. Seeking to apply a blend of data analysis and technical expertise in an innovative organization.
+              Proficient in cloud platforms (Oracle Cloud, AWS, Azure), containerization with Docker, infrastructure automation, and monitoring systems. Track record of optimizing data workflows, implementing CI/CD pipelines, and building production-ready infrastructure that scales.
             </p>
             <div className="flex items-center gap-4 p-4 bg-background rounded-xl border border-border">
               <FileSpreadsheet className="w-10 h-10 text-primary" />
